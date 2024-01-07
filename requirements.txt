@@ -29,10 +29,9 @@ PyMsgBox==1.0.9
 pyperclip==1.8.2
 PyRect==0.2.0
 PyScreeze==0.1.30
+python==3.10
 python-dateutil==2.8.2
 pytweening==1.0.7
-pywin32==306
-pywin32-ctypes==0.2.2
 pyzmq==25.1.1
 setuptools==69.0.3
 six==1.16.0
