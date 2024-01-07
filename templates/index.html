@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator | Ishabrato</title>
+    <link rel="stylesheet" href="static/css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <form action="calculation" method="post">
+          {% csrf_token %}
+            <div class="container" >
+              <p id="title">Calculator</p>
+                <table id="tb">
+                <tbody>
+                  <tr>
+                    <td colspan="4"><input type="text" name="values" id="result" placeholder="0" value="{{result}}"></td>
+                  </tr>
+                </tbody>
+                <tbody>
+                    <table>
+                        <tbody>
+                          <tr>
+                            <td><button type="button" class="operator" onclick="insertTextInInputValue('+');">+</button></td>
+                            <td><button type="button" class="operator" onclick="insertTextInInputValue('-');">-</button></td>
+                            <td><button type="button" class="operator" onclick="insertTextInInputValue('*');">*</button></td>
+                            <td><button type="button" class="operator" onclick="insertTextInInputValue('/');">/</button></td>
+                          </tr>
+                        </tbody>
+                        <tbody>
+                          <tr>
+                            <td><button type="button" onclick="insertTextInInputValue(7);">7</button></td>
+                            <td><button type="button" onclick="insertTextInInputValue(8);">8</button></td>
+                            <td><button type="button" onclick="insertTextInInputValue(9);">9</button></td>
+                            <td rowspan="4"><button type="submit" class="equal operator">=</button></td>
+                          </tr>
+                          <tr>
+                            <td><button type="button" onclick="insertTextInInputValue(4);">4</button></td>
+                            <td><button type="button" onclick="insertTextInInputValue(5);">5</button></td>
+                            <td><button type="button" onclick="insertTextInInputValue(6);">6</button></td>
+                          </tr>
+                          <tr>
+                            <td><button type="button" onclick="insertTextInInputValue(1);">1</button></td>
+                            <td><button type="button" onclick="insertTextInInputValue(2);">2</button></td>
+                            <td><button type="button" onclick="insertTextInInputValue(3);">3</button></td>
+                          </tr>
+                          <tr>
+                            <td><button type="button" onclick="insertTextInInputValue(0);">0</button></td>
+                            <td><button type="button" class="decimal" onclick="insertTextInInputValue('.');">.</button></td>
+                            <td><button type="button" class="clear" onclick="insertTextInInputValue('clear');">AC</button></td>
+                          </tr>
+                        </tbody>
+                        </table>
+                </tbody>
+                </table>
+                
+            </div>
+        </form>
+    </div>
+
+    <footer>
+        <p>Created by | <a href="https://github.com/TechMaxTro">Ishabrato Joardar</a></p>
+    </footer>
+</body>
+<script type="text/javascript">
+  function insertTextInInputValue(buttonValueIs){
+            if (buttonValueIs == "clear")
+            {
+              $('#result').val(0);
+            }
+            else {
+              var inputElementIs = document.getElementById("result");
+              inputElementIs.value =  inputElementIs.value + buttonValueIs;
+              $('#result').val(inputElementIs.value);
+            }
+        }
+  </script>
+</html>
+
+
+{% comment %} https://github.com/singlashubham1206/forthproject/blob/master/templates/calc.html {% endcomment %}
