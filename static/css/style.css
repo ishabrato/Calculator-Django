@@ -39,7 +39,7 @@ button {
   height: 100%;
   border: none;
   border-radius: 13px;
-  box-shadow: inset 1px -1px 8px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: inset -5px -5px 4px 0 rgba(0, 0, 0, 0.2);
   background: rgb(252 255 214);
   font-size: 1.5rem;
   color: #000000;
@@ -48,7 +48,8 @@ button {
   margin: 3px;
 }
 button:hover {
-  box-shadow: inset 1px -1px 8px 0 rgba(0, 0, 0, 0.2);
+  transform: scale(0.95);
+  transition: all 0.3s ease-in-out 0.0s;
 }
 
 .container {
@@ -82,8 +83,6 @@ button:hover {
 .equal {
   background-color: rgb(106, 217, 251);
   color: rgb(255, 255, 255);
-  height: 322px;
+  height: 156px;
 }
-::placeholder {
-  color: rgb(255, 255, 255);
-}
+
